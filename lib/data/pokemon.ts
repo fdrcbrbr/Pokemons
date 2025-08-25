@@ -1,0 +1,19 @@
+import { Pokemon } from "@/lib/data/interfaces/pokemon";
+import { PokemonApiResponse } from "@/lib/data/interfaces/pokemon";
+
+export async function fetchPokemon(id: number): Promise<Pokemon> {
+  const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
+  const data: PokemonApiResponse = await response.json();
+
+  const pokemon: Pokemon = {
+    id: data.id,
+    name: data.name,
+    pic: data.sprites.front_default,
+    types: data.types.map((type) => type.type.name),
+    HP: data.stats.find((stat) => stat.stat.name === "hp")!.base_stat,
+    attack: data.stats.find((stat) => stat.stat.name === "attack")!.base_stat,
+    defense: data.stats.find((stat) => stat.stat.name === "defense")!.base_stat,
+  };
+
+  return pokemon;
+}
