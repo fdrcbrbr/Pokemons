@@ -6,11 +6,10 @@ import { getColorFromType, capitalize } from "@/lib/util";
 
 export default async function Card(){
 const pokemon = await getPokemonById(6);
-console.log(getColorFromType("bg-", pokemon.type[0]));
 
   return (
     <CardWrapper>
-      <div className="w-64 h-98 rounded-xl bg-blue-50 border-6 border-[#637cce] shadow-lg flex flex-col items-center p-4">
+      <div className="w-60 h-94 rounded-xl bg-blue-50 border-6 border-[#637cce] shadow-lg flex flex-col items-center p-4">
         <div className={`w-32 h-32 rounded-full border-4 ${getColorFromType("border-", pokemon.type[0])} flex items-center justify-center mt-4`}>
           <Image
             src={pokemon.pic}

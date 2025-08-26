@@ -12,9 +12,9 @@ export default function NavMain(){
       width={60}
       height={60}
     />
-    <p className="ml-2 text-3xl font-extrabold text-transparent bg-gradient-to-r from-purple-800 to-blue-800 [background-clip:text]">
-      POKEDEX
-    </p>
+    <h2 className="ml-2 text-3xl font-extrabold text-transparent bg-gradient-to-r from-purple-800 to-blue-800 [background-clip:text]">
+      Pokédex
+    </h2>
   </Link>
 
   <nav>
