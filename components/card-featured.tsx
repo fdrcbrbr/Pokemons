@@ -1,17 +1,16 @@
 import Image from "next/image";
 import { getPokemonById } from "@/lib/data/pokemon";
 import CardWrapper from "@/components/cards-wrapper";
-import { getColorFromType, capitalize } from "@/lib/util";
+import { getColorFromType  } from "@/lib/util";
 
 
 export default async function Card(){
-const pokemon = await getPokemonById(6);
-console.log(getColorFromType("bg-", pokemon.type[0]));
+const pokemon = await getPokemonById(1);
 
   return (
     <CardWrapper>
       <div className="w-64 h-96 rounded-xl bg-blue-50 shadow-lg flex flex-col items-center p-4">
-        <div className={`w-32 h-32 rounded-full border-4 ${getColorFromType("border-", pokemon.type[0])} flex items-center justify-center mt-4`}>
+        <div className="w-32 h-32 rounded-full border-4 border-yellow-400 flex items-center justify-center mt-4">
           <Image
             src={pokemon.pic}
             alt={pokemon.name}
@@ -23,14 +22,9 @@ console.log(getColorFromType("bg-", pokemon.type[0]));
         <div className="mt-2 text-center">
           <p className="text-gray-600 text-sm">#{pokemon.id}</p>
           <h2 className="text-2xl font-bold text-gray-800">{pokemon.name}</h2>
-          {pokemon.type.map((type, index) => (
-          <span
-            key={index}
-            className={`inline-block px-3 py-1 text-xs font-semibold text-white rounded-full mt-2 ${getColorFromType("bg-", type)}`}
-          >
-            {type}
+          <span className="inline-block px-3 py-1 text-xs font-semibold text-white bg-yellow-500 rounded-full mt-2">
+            {pokemon.type}
           </span>
-          ))}
         </div>
         <div className="mt-6 w-full">
           <div className="flex justify-between mb-2">
@@ -50,5 +44,3 @@ console.log(getColorFromType("bg-", pokemon.type[0]));
     </CardWrapper>
   );
 }
-
-
