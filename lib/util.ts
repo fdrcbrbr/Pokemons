@@ -6,32 +6,6 @@ export function getRandomNumber() {
   return Math.floor(Math.random() * 1001);
 }
 
-/* export function getColorFromType(type: string): string {
-  const colorMap: Record<string, string> = {
-    grass: '#7AC74C',
-    fire: '#EE8130',
-    water: '#6390F0',
-    electric: '#F7D02C',
-    ice: '#96D9D6',
-    fighting: '#C22E28',
-    poison: '#A33EA1',
-    ground: '#E2BF65',
-    flying: '#A98FF3',
-    psychic: '#F95587',
-    bug: '#A6B91A',
-    rock: '#B6A136',
-    ghost: '#735797',
-    dragon: '#6F35FC',
-    dark: '#705746',
-    steel: '#B7B7CE',
-    fairy: '#D685AD',
-    stellar: '#C0C0C0',
-  };
-  const color = colorMap[type.toLowerCase()] || '#68A090';
-  return `bg-[${color}] border-[${color}]`;
-} */
-
-
 // swicth function maps the colors with the types and add Tailwind rules es. rule"bg-" + color"[#A8A77A]"
 export function getColorFromType( rule: string, type: string): string {
   switch (type.toLowerCase()) {
