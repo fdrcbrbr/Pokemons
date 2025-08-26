@@ -10,7 +10,7 @@ console.log(getColorFromType("bg-", pokemon.type[0]));
 
   return (
     <CardWrapper>
-      <div className="w-64 h-96 rounded-xl bg-blue-50 shadow-lg flex flex-col items-center p-4">
+      <div className="w-64 h-98 rounded-xl bg-blue-50 border-6 border-[#637cce] shadow-lg flex flex-col items-center p-4">
         <div className={`w-32 h-32 rounded-full border-4 ${getColorFromType("border-", pokemon.type[0])} flex items-center justify-center mt-4`}>
           <Image
             src={pokemon.pic}
@@ -21,28 +21,30 @@ console.log(getColorFromType("bg-", pokemon.type[0]));
           />
         </div>
         <div className="mt-2 text-center">
-          <p className="text-gray-600 text-sm">#{pokemon.id}</p>
-          <h2 className="text-2xl font-bold text-gray-800">{pokemon.name}</h2>
+          <p className={`inline-block px-2 text-gray-600 text-sm rounded-full mt-2 ${getColorFromType("bg-", pokemon.type[0])}`}>#{pokemon.id}</p>
+          <h2 className="text-2xl font-bold text-gray-800">{capitalize(pokemon.name)}</h2>
+          <div className="flex flex-wrap gap-2">
           {pokemon.type.map((type, index) => (
           <span
             key={index}
             className={`inline-block px-3 py-1 text-xs font-semibold text-white rounded-full mt-2 ${getColorFromType("bg-", type)}`}
           >
-            {type}
+            {capitalize(type)}
           </span>
           ))}
+          </div>
         </div>
         <div className="mt-6 w-full">
           <div className="flex justify-between mb-2">
-            <span className="text-gray-600">HP</span>
+            <span className="text-gray-600 font-semibold">HP</span>
             <span className="font-semibold">{pokemon.hp}</span>
           </div>
           <div className="flex justify-between mb-2">
-            <span className="text-gray-600">Attack</span>
+            <span className="text-gray-600 font-semibold">Attack</span>
             <span className="font-semibold">{pokemon.attack}</span>
           </div>
           <div className="flex justify-between">
-            <span className="text-gray-600">Defense</span>
+            <span className="text-gray-600 font-semibold">Defense</span>
             <span className="font-semibold">{pokemon.defense}</span>
           </div>
         </div>
