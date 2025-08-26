@@ -88,3 +88,12 @@ h1, h2, h3 {
   display: grid;
   grid-template-columns: inherit;
 }
+
+.circle-image {
+      width: 150px;       /* Larghezza dell'immagine */
+      height: 150px;      /* Altezza dell'immagine (deve essere uguale alla larghezza per un cerchio perfetto) */
+      border-radius: 50%; /* Trasforma l'immagine in un cerchio */
+      object-fit: cover;  /* Assicura che l'immagine riempia il cerchio senza distorsioni */
+      border: 3px solid #333; /* Bordo opzionale */
+      overflow: hidden;   /* Nasconde eventuali parti dell'immagine che escono dal cerchio */
+    }
