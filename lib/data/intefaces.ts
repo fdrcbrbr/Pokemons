@@ -8,6 +8,11 @@ export interface Pokemon {
     defense: number;
 }
 
+export interface PokemonShort {
+  name: string;
+  url: string;
+}
+
 export interface PokemonType {
   slot: number;
   type: {
