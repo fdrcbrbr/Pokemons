@@ -1,4 +1,4 @@
-/* eslint-disable react/no-unescaped-entities */
+
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import Image from "next/image";
 import NavMain from "@/components/nav-main";

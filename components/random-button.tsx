@@ -9,12 +9,14 @@ export default function RandomButton() {
 
   const handleRandomClick = () => {
     const params = new URLSearchParams(searchParams.toString());
+    
 
     const maxPokemonId = 1001;
     const randomId = Math.floor(Math.random() * maxPokemonId) + 1;
     params.set("random", randomId.toString());
 
     router.push(`${pathname}?${params.toString()}`);
+
   };
   return (
     <div>

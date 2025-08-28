@@ -1,5 +1,7 @@
-
+/* eslint-disable react/no-unescaped-entities */
+import { Suspense } from "react";
 import RandomButton from "./random-button";
+import CardSingle from "./card";
 
 export default function Hero() {
   return (
@@ -12,6 +14,16 @@ export default function Hero() {
         <br /> your favourite and learn about their stats.
       </p>
       <RandomButton/>
+      <Suspense
+          key={random}
+          fallback={
+            <div className="animate-pulse w-58 h-65 bg-neutral-400/70 border rounded border-neutral-400 p-4">
+              Loading...
+            </div>
+          }
+        >
+          <CardSingle id={Number(random)} />
+        </Suspense>
     </section>
   );
 }
