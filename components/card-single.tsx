@@ -1,16 +1,15 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import Image from "next/image";
 import { getPokemonById } from "@/lib/data/pokemon";
-import CardWrapper from "@/components/cards-wrapper";
 import { getColorFromType, capitalize } from "@/lib/util";
-import {Pokemon} from "@/lib/data/intefaces";
-import { JSX } from "react";
 
 
-export default async function CardSingle(id: number): Promise<JSX.Element> {
+interface CardSingleProps {
+  id: string;
+}
+
+
+export default async function CardSingle({ id }: CardSingleProps) {
 const pokemon = await getPokemonById(id);
-console.log(pokemon.type);
-console.log(getColorFromType("border-", pokemon.type[0]))
 
   return (
       <div className="w-60 h-94 rounded-xl bg-blue-50 border-4 border-[#637cce] shadow-lg flex flex-col items-center p-2">

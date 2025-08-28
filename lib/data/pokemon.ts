@@ -18,7 +18,7 @@ export async function getPokemons(): Promise<Pokemon> {
   return pokemon;
 };
 
-export async function getPokemonById(id: number): Promise<Pokemon> {
+export async function getPokemonById(id: string) {
   const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
   const data: PokemonApiResponse = await response.json();
 

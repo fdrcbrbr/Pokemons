@@ -21,7 +21,7 @@ export default function RandomButton() {
   return (
     <div>
       <button
-        className="className=btn-primary"
+        className="btn-primary"
         onClick={handleRandomClick}
       >
         <Image src="/Dice.svg" width={25} height={25} alt="Dice" />
