@@ -5,7 +5,7 @@ export default function CardWrapper({
   children: React.ReactNode;
 }) {
   return (
-    <div className="w-full py-6">
+    <div className="w-full py-6 bg-gradient-to-br [background-image:linear-gradient(-10deg,_#EFF5FD,_#F4E7FA)]">
       <h2 className="text-center text-4xl font-bold py-6 col-span-6">
         Featured Pokemon
       </h2>

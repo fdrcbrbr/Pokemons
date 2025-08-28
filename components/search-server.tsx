@@ -32,16 +32,6 @@ export default async function SearchPoke({
   return (
     <div>
       <Search placeholder="Search for pokemon" />
-      {allPokemons.map((p) => (
-        <a key={p.name} href={"/poke/" + p.name}>
-          {p.name}
-        </a>
-      ))}
-      {allPokemonData.map((p) => (
-        <a key={p.name} href={"/poke/" + p.name}>
-          {p.name}
-        </a>
-      ))}
     </div>
   );
 }
