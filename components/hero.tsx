@@ -9,7 +9,7 @@ export default async function Hero({
   searchParams: Promise<{ [key: string]: string | undefined }>;
 }) {
   const { random } = await searchParams;
-  const pokemonId = random ? parseInt(random, 10) : null;
+
   
   return (
     <section className="flex flex-col items-center gap-4 bg-gradient-to-br [background-image:linear-gradient(-10deg,_#C97FE4,_#AECDF6)] p-14">
@@ -21,7 +21,7 @@ export default async function Hero({
         <br /> your favourite and learn about their stats.
       </p>
       <RandomButton />
-      {pokemonId && <CardSingle id={pokemonId.toString()} />}:
+      {random && <CardSingle id={random.toString()} />}:
     </section>
   );
 };

@@ -7,7 +7,6 @@ interface CardSingleProps {
   id: string;
 }
 
-
 export default async function CardSingle({ id }: CardSingleProps) {
 const pokemon = await getPokemonById(id);
 

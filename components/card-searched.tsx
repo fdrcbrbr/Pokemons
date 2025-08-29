@@ -1,16 +1,24 @@
-import Image from "next/image";
-import { getPokemonById } from "@/lib/data/pokemon";
+/* import Image from "next/image";
 import CardWrapper from "@/components/cards-wrapper";
 import { getColorFromType, capitalize  } from "@/lib/util";
 import {Pokemon} from "@/lib/data/intefaces";
+import { PokemonShort } from "@/lib/data/intefaces";
 
-export default async function CardFeatured(){
-  const featuredPokeIds: string[] =  ["25", "6", "9", "3"];
-  const featuredPokemons: Pokemon[] = await Promise.all(
-  featuredPokeIds.map((id) => getPokemonById(id))
-);
+export default async function CardSearched({searchParams,
+}: {
+  searchParams: Promise<{ [key: string]: string | undefined }>;
+}) {
 
-  return (
+const { query = ""} = await searchParams;
+const response = await fetch("https://pokeapi.co/api/v2/pokemon?limit=1025");
+const { results }: { results: PokemonShort[] } = await response.json(); */
+
+    
+  //const featuredPokemons: Pokemon[] = await Promise.all(
+  //featuredPokeIds.map((id) => getPokemonById(id))
+
+
+/*   return (
     <CardWrapper>
       {featuredPokemons.map((pokemon) => (
         <div
@@ -69,4 +77,4 @@ export default async function CardFeatured(){
       ))}
     </CardWrapper>
   );
-}
+} */
