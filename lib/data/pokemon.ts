@@ -1,38 +1,23 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { Pokemon, PokemonShort } from "@/lib/data/intefaces";
-import { PokemonApiResponse } from "@/lib/data/intefaces";
+
 
 export async function getPokemons(): Promise<Pokemon> {
   const response = await fetch(`https://pokeapi.co/api/v2/pokemon/`);
-  const data: PokemonApiResponse = await response.json();
+  const pokemon = await response.json();
 
-  const pokemon: Pokemon = {
-    id: data.id,
-    name: data.name,
-    pic: data.sprites.front_default,
-    type: data.types.map((type) => type.type.name),
-    hp: data.stats.find((stat) => stat.stat.name === "hp")!.base_stat,
-    attack: data.stats.find((stat) => stat.stat.name === "attack")!.base_stat,
-    defense: data.stats.find((stat) => stat.stat.name === "defense")!.base_stat,
-  };
   return pokemon;
 };
 
-export async function getPokemonById(id: string) {
+
+export async function getPokemonById(id: string): Promise<Pokemon> {
   const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
-  const data: PokemonApiResponse = await response.json();
-
-  const pokemon: Pokemon = {
-    id: data.id,
-    name: data.name,
-    pic: data.sprites.front_default,
-    type: data.types.map((type) => type.type.name),
-    hp: data.stats.find((stat) => stat.stat.name === "hp")!.base_stat,
-    attack: data.stats.find((stat) => stat.stat.name === "attack")!.base_stat,
-    defense: data.stats.find((stat) => stat.stat.name === "defense")!.base_stat,
-  };
+  if (!response.ok) {
+    throw new Error("Failed to fetch Pokémon");
+  }
+  const pokemon: Pokemon = await response.json();
   return pokemon;
-};
+}
 
 export async function fetchAllPokemonData(
   list: PokemonShort[]

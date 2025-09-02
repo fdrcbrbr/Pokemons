@@ -2,10 +2,10 @@
 import NavMain from "@/components/nav-main";
 import Search from "@/components/search";
 import CardFeatured from "@/components/card-featured";
-import HeroMain from "@/components/hero-main";
+import HeroTypes from "@/components/hero-main";
 import Footer from "@/components/footer";
 
-export default function Home({
+export default function Types({
   searchParams,
 }: {
   searchParams: Promise<{ [key: string]: string | undefined }>;
@@ -16,7 +16,7 @@ export default function Home({
         <NavMain />
       </header>
       <main>
-        <HeroMain searchParams={searchParams}/>
+        <HeroTypes searchParams={searchParams}/>
         <Search />
         <CardFeatured />
       </main>

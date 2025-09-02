@@ -52,6 +52,154 @@ h1, h2, h3 {
   @apply text-transparent bg-clip-text bg-gradient-to-r from-purple-800 to-blue-800;
 }
 
+.badge {
+  @apply inline-block px-2 py-0 rounded-full text-sm font-semibold text-white;
+}
+
+.cborder-normal {
+  @apply border-gray-200;
+}
+
+.cborder-fire {
+  @apply border-amber-400;
+}
+
+.cborder-water {
+  @apply border-blue-400;
+}
+
+.cborder-electric {
+  @apply border-yellow-200;
+}
+
+.cborder-grass {
+  @apply border-green-400;
+}
+
+.cborder-ice {
+  @apply border-cyan-100;
+}
+
+.cborder-fighting {
+  @apply border-red-500;
+}
+
+.cborder-poison {
+  @apply border-purple-500;
+}
+
+.cborder-ground {
+  @apply border-yellow-500;
+}
+
+.cborder-flying {
+  @apply border-indigo-200;
+}
+
+.cborder-psychic {
+  @apply border-pink-300;
+}
+
+.cborder-bug {
+  @apply border-lime-400;
+}
+
+.cborder-rock {
+  @apply border-stone-400;
+}
+
+.cborder-ghost {
+  @apply border-indigo-600;
+}
+
+.cborder-dragon {
+  @apply border-indigo-400;
+}
+
+.cborder-dark {
+  @apply border-gray-600;
+}
+
+.cborder-steel {
+  @apply border-slate-200;
+}
+
+.cborder-fairy {
+  @apply border-pink-100;
+}
+
+.badge-normal {
+  @apply bg-gray-500;
+}
+
+.badge-fire {
+  @apply bg-amber-600;
+}
+
+.badge-water {
+  @apply bg-blue-600;
+}
+
+.badge-electric {
+  @apply bg-yellow-600;
+}
+
+.badge-grass {
+  @apply bg-green-700;
+}
+
+.badge-ice {
+  @apply bg-cyan-400;
+}
+
+.badge-fighting {
+  @apply bg-red-500;
+}
+
+.badge-poison {
+  @apply bg-purple-500;
+}
+
+.badge-ground {
+  @apply bg-yellow-500;
+}
+
+.badge-flying {
+  @apply bg-indigo-400;
+}
+
+.badge-psychic {
+  @apply bg-pink-400;
+}
+
+.badge-bug {
+  @apply bg-lime-700;
+}
+
+.badge-rock {
+  @apply bg-stone-500;
+}
+
+.badge-ghost {
+  @apply bg-indigo-700;
+}
+
+.badge-dragon {
+  @apply bg-indigo-500;
+}
+
+.badge-dark {
+  @apply bg-gray-800;
+}
+
+.badge-steel {
+  @apply bg-slate-500;
+}
+
+.badge-fairy {
+  @apply bg-pink-400;
+}
+
 /* breakout */
 /* see https://www.youtube.com/watch?v=c13gpBrnGEw */
 /* TODO: make tailwind utility */
