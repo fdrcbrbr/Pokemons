@@ -3,6 +3,7 @@ import NavMain from "@/components/nav-main";
 import Search from "@/components/search";
 import CardFeatured from "@/components/card-featured";
 import Hero from "@/components/hero";
+import Footer from "@/components/footer";
 
 export default function Home({
   searchParams,
@@ -19,6 +20,7 @@ export default function Home({
         <Search />
         <CardFeatured />
       </main>
+      <Footer/>
     </div>
   );
 }
