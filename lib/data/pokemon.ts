@@ -2,11 +2,11 @@
 import { Pokemon, PokemonShort } from "@/lib/data/intefaces";
 
 
-export async function getPokemons(): Promise<Pokemon> {
-  const response = await fetch(`https://pokeapi.co/api/v2/pokemon/`);
-  const pokemon = await response.json();
+export async function getPokemonShort(): Promise<PokemonShort[]> {
+  const response = await fetch(`https://pokeapi.co/api/v2/pokemon/?limit=1025`);
+  const pokemons: PokemonShort[] = await response.json();
 
-  return pokemon;
+  return pokemons;
 };
 
 
@@ -19,7 +19,7 @@ export async function getPokemonById(id: string): Promise<Pokemon> {
   return pokemon;
 }
 
-export async function fetchAllPokemonData(
+export async function getAllPokemonData(
   list: PokemonShort[]
 ): Promise<Pokemon[]> {
   const fetchPromises = list.map((item) => fetch(item.url));
@@ -34,7 +34,7 @@ export async function fetchAllPokemonData(
     const jsonPromises = responses.map((res) => res.json());
     return await Promise.all(jsonPromises);
   } catch (e) {
-    console.error("error");
+    console.error("error fetching pokemons");
     return [];
   }
 }
