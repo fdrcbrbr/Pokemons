@@ -15,7 +15,7 @@ export default function RandomButton() {
     const randomId = Math.floor(Math.random() * maxPokemonId) + 1;
     params.set("random", randomId.toString());
 
-    router.push(`${pathname}?${params.toString()}`);
+    router.push(`${pathname}?${params.toString()}`, { scroll: false });
 
   };
   return (

@@ -21,7 +21,7 @@ export default function Search({ placeholder }: { placeholder?: string }) {
       params.delete("query");
     }
     
-    replace(`${pathname}?${params}`);
+    replace(`${pathname}?${params}`, { scroll: false });
   }, 600);
 
   return (
