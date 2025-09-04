@@ -1,9 +1,8 @@
-import { getAllPokemonData, getPokemonById, getPokemonShort } from "@/lib/data/pokemon";
+import { getAllPokemonData, getPokemonShort } from "@/lib/data/pokemon";
 import CardWrapper from "@/components/cards-wrapper";
-import {Pokemon, PokemonShort} from "@/lib/data/intefaces";
-import Search from "@/components/search";
-import Link from "next/link";
-import { Suspense } from "react";
+import {PokemonShort} from "@/lib/data/intefaces";
+import PokemonCard from "./card";
+
 
 export default async function CardSearched({
   searchParams,
@@ -16,13 +15,14 @@ export default async function CardSearched({
   //String for params listening
   const { query = ""} = await searchParams;
   //Confronting poke list with search
-  const allPokemons = pokemonListShort.filter((p) =>
+  const searchedPokemons = pokemonListShort.filter((p) =>
     p.name.toLowerCase().includes(query.toLowerCase())
   );
+  const allPokemons = await getAllPokemonData(searchedPokemons)
 
   return (
     <CardWrapper>
-      {featuredPokemons.map((pokemon) => (
+      {allPokemons.map((pokemon) => (
         <PokemonCard key={pokemon.name} pokemon={pokemon}/>
       ))}
     </CardWrapper>
