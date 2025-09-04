@@ -6,18 +6,12 @@ import HeroMain from "@/components/hero-main";
 import Footer from "@/components/footer";
 import CardSearched from "@/components/card-searched";
 
-export default function Home({
+export default async function Home({
   searchParams,
 }: {
-  searchParams: { [key: string]: string | string[] | undefined };
+  searchParams: Promise<{ [key: string]: string | undefined }>;
 }) {
-  const hasSearchQuery = !!searchParams?.q;
-  const heroSearchParams = {
-    random: searchParams.random?.toString() || "",
-  };
-  const cardSearchParams = {
-    q: searchParams.q?.toString() || "",
-  };
+  const { query, random  } = await searchParams;
 
   return (
     <div>
@@ -25,10 +19,10 @@ export default function Home({
         <NavMain />
       </header>
       <main>
-        <HeroMain searchParams={heroSearchParams} />
+        <HeroMain random={random} />
         <Search />
-        {hasSearchQuery ? (
-          <CardSearched searchParams={cardSearchParams} />
+        {query ? (
+          <CardSearched query={query} />
         ) : (
           <CardFeatured />
         )}

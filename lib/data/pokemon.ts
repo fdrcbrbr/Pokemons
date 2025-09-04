@@ -4,10 +4,9 @@ import { Pokemon, PokemonShort } from "@/lib/data/intefaces";
 
 export async function getPokemonShort(): Promise<PokemonShort[]> {
   const response = await fetch(`https://pokeapi.co/api/v2/pokemon/?limit=1025`);
-  const pokemons: PokemonShort[] = await response.json();
-
-  return pokemons;
-};
+  const data = await response.json();
+  return data.results;
+}
 
 
 export async function getPokemonById(id: string): Promise<Pokemon> {

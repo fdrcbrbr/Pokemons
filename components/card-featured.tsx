@@ -12,7 +12,7 @@ export default async function CardFeatured(){
 );
 
   return (
-    <CardWrapper>
+    <CardWrapper message="Featured Pokemon">
       {featuredPokemons.map((pokemon) => (
         <PokemonCard key={pokemon.name} pokemon={pokemon}/>
       ))}

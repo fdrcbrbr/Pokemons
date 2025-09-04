@@ -3,13 +3,11 @@ import RandomButton from "./random-button";
 import CardSingle from "./card-single";
 import React from "react";
 
-export default async function HeroMain({
-  searchParams,
-}: {
-  searchParams: Promise<{ [key: string]: string | undefined }>;
-}) {
-  const { random } = await searchParams;
+interface HeroMainProps {
+  random?: string;
+}
 
+export default async function HeroMain({ random }: HeroMainProps) {
   
   return (
     <section className="flex flex-col items-center gap-4 bg-gradient-to-br [background-image:linear-gradient(-10deg,_#C97FE4,_#AECDF6)] p-14">

@@ -16,9 +16,7 @@ export default function Types({
         <NavMain />
       </header>
       <main>
-        <HeroTypes searchParams={searchParams}/>
-        <Search />
-        <CardFeatured />
+      
       </main>
       <Footer/>
     </div>
