@@ -1,13 +1,21 @@
 import React from 'react'
-interface TypeBadgeProps {
-    name: string;
-    url: string;
-}
+import { TypeBadgeProps } from '@/lib/data/intefaces';
+
 
 export default function TypeBadge({ name }: TypeBadgeProps) {
     
     return (
         <span className={`badge badge-${name}`}>
+            {name}
+        </span>
+    )
+}
+
+export 
+function TypeBadgeXL({ name }: TypeBadgeProps) {
+    
+    return (
+        <span className={`badgeXL badge-${name}`}>
             {name}
         </span>
     )

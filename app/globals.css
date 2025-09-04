@@ -56,6 +56,10 @@ h1, h2, h3 {
   @apply inline-block px-2 py-0 rounded-full text-sm font-semibold text-white;
 }
 
+.badgeXL {
+ @apply w-full h-full inline-flex items-center justify-center rounded-full font-semibold text-white p-2;
+}
+
 .cborder-normal {
   @apply border-gray-200;
 }

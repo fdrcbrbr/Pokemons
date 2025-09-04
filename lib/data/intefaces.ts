@@ -16,6 +16,15 @@ export interface Type {
     };
 }
 
+export interface TypeBadgeProps {
+    name: string;
+    url: string;
+}
+
+export interface PokemonTypeList {
+  type: TypeBadgeProps;
+}
+
 export interface PokemonSprites {
   front_default: string;
 }

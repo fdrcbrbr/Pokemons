@@ -1,11 +1,11 @@
 interface CardWrapperProps {
   children: React.ReactNode;
-  message?: string; // Prop opzionale per il titolo
+  message?: string;
 }
 
 export default function CardWrapper({
   children,
-  message = "Featured Pokemon", // Valore di default
+  message = "",
 }: CardWrapperProps) {
   return (
     <div className="w-full py-10 bg-gradient-to-br [background-image:linear-gradient(-10deg,_#EFF5FD,_#F4E7FA)]">

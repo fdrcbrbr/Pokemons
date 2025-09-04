@@ -1,9 +1,8 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 
 import NavMain from "@/components/nav-main";
-import Search from "@/components/search";
-import CardFeatured from "@/components/card-featured";
-import HeroTypes from "@/components/hero-main";
 import Footer from "@/components/footer";
+import HeroTypes from "@/components/hero-types";
 
 export default function Types({
   searchParams,
@@ -16,7 +15,7 @@ export default function Types({
         <NavMain />
       </header>
       <main>
-      
+      <HeroTypes/>
       </main>
       <Footer/>
     </div>

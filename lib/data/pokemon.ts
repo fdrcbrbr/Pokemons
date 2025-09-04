@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { Pokemon, PokemonShort } from "@/lib/data/intefaces";
-
+import { TypeBadgeProps } from '@/lib/data/intefaces';
+import { PokemonTypeList } from "@/lib/data/intefaces";
 
 export async function getPokemonShort(): Promise<PokemonShort[]> {
   const response = await fetch(`https://pokeapi.co/api/v2/pokemon/?limit=1025`);
@@ -35,5 +36,23 @@ export async function getAllPokemonData(
   } catch (e) {
     console.error("error fetching pokemons");
     return [];
+  }
+}
+
+
+export async function getPokemonTypes(): Promise<PokemonTypeList[]> {
+  try {
+    const response = await fetch('https://pokeapi.co/api/v2/type/');
+    if (!response.ok) {
+      throw new Error('Failed to fetch Pokémon types');
+    }
+    const data = await response.json();
+    const types = data.results.map((type: TypeBadgeProps) => ({
+      type: { name: type.name, url: type.url },
+    }));
+    return types;
+  } catch (error) {
+    console.error('Error fetching Pokémon types:', error);
+    return []; 
   }
 }

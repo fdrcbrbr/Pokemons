@@ -1,7 +1,8 @@
-/* eslint-disable react/no-unescaped-entities */
+
 import RandomButton from "./random-button";
 import CardSingle from "./card-single";
 import React from "react";
+import HeroWrapper from "./hero-wrapper";
 
 interface HeroMainProps {
   random?: string;
@@ -10,16 +11,11 @@ interface HeroMainProps {
 export default async function HeroMain({ random }: HeroMainProps) {
   
   return (
-    <section className="flex flex-col items-center gap-4 bg-gradient-to-br [background-image:linear-gradient(-10deg,_#C97FE4,_#AECDF6)] p-14">
-      <h1 className="text-center mt-14 text-8xl font-extrabold text-transparent bg-gradient-to-r from-purple-800 to-blue-800 [background-clip:text]">
-        Gotta catch 'em all!
-      </h1>
-      <p className="text-center text-black text-xl">
-        Discover, search and explore the amazing world of Pokémon. Find
-        <br /> your favourite and learn about their stats.
-      </p>
+    <HeroWrapper  title="Gotta catch 'em all!" message="Discover, 
+      search and explore the amazing world of Pokémon. Find
+      your favourite and learn about their stats.">
       <RandomButton />
       {random && <CardSingle id={random.toString()} />}:
-    </section>
+    </HeroWrapper>
   );
 };
