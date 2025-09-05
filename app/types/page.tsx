@@ -22,7 +22,7 @@ export default async function Types({
           query={type} 
           keyType="types" 
           page={page ? parseInt(page) : 1}
-          limit={20}
+          limit={10}
           />
       </main>
       <Footer />
