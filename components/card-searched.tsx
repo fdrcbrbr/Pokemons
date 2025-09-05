@@ -1,29 +1,35 @@
 import { getAllPokemonData, getPokemonShort } from "@/lib/data/pokemon";
 import CardWrapper from "@/components/cards-wrapper";
-import {PokemonShort} from "@/lib/data/intefaces";
+import { PokemonShort } from "@/lib/data/intefaces";
 import PokemonCard from "./card";
 
 interface CardSearchedProps {
   query?: string;
+  keyType?: "name" | "types";
 }
 
-export default async function CardSearched({ query }: CardSearchedProps){
+export default async function CardSearched({
+  query,
+  keyType,
+}: CardSearchedProps) {
+  // Ottieni la lista completa dei Pokémon (con tutti i dati, inclusi i tipi)
+  const pokemonListShort: PokemonShort[] = await getPokemonShort();
+  const allPokemons = await getAllPokemonData(pokemonListShort);
 
-  //Fetch the list with general Pokemon info
-  const pokemonListShort: PokemonShort[]= await getPokemonShort();
-
-  //Confronting poke list with search
-  const searchedPokemons = pokemonListShort.filter((p) =>
-  p.name.toLowerCase().includes(query?.toLowerCase() || "")
-  );
-
-  //Search the corresponding Pokemon with all the infos
-  const allPokemons = await getAllPokemonData(searchedPokemons)
+  // Filtra allPokemons in base a keyType
+  const filteredPokemons = allPokemons.filter((pokemon) => {
+    if (keyType === "name" && query) {
+      return pokemon.name.toLowerCase().includes(query.toLowerCase()); // Filtra per nome
+    } else if (keyType === "types" && query) {
+      return pokemon.types[0].type.name.toLowerCase() === query.toLowerCase(); // Filtra per primo tipo
+    }
+    return false;
+  });
 
   return (
     <CardWrapper message="Your search...">
-      {allPokemons.map((pokemon) => (
-        <PokemonCard key={pokemon.name} pokemon={pokemon}/>
+      {filteredPokemons.map((pokemon) => (
+        <PokemonCard key={pokemon.name} pokemon={pokemon} />
       ))}
     </CardWrapper>
   );

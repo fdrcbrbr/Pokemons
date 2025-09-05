@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { Pokemon, PokemonShort } from "@/lib/data/intefaces";
-import { TypeBadgeProps } from '@/lib/data/intefaces';
+import { TypeBadgeProps } from "@/lib/data/intefaces";
 import { PokemonTypeList } from "@/lib/data/intefaces";
 
 export async function getPokemonShort(): Promise<PokemonShort[]> {
@@ -8,7 +8,6 @@ export async function getPokemonShort(): Promise<PokemonShort[]> {
   const data = await response.json();
   return data.results;
 }
-
 
 export async function getPokemonById(id: string): Promise<Pokemon> {
   const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
@@ -39,12 +38,11 @@ export async function getAllPokemonData(
   }
 }
 
-
 export async function getPokemonTypes(): Promise<PokemonTypeList[]> {
   try {
-    const response = await fetch('https://pokeapi.co/api/v2/type/');
+    const response = await fetch("https://pokeapi.co/api/v2/type/");
     if (!response.ok) {
-      throw new Error('Failed to fetch Pokémon types');
+      throw new Error("Failed to fetch Pokémon types");
     }
     const data = await response.json();
     const types = data.results.map((type: TypeBadgeProps) => ({
@@ -52,7 +50,11 @@ export async function getPokemonTypes(): Promise<PokemonTypeList[]> {
     }));
     return types;
   } catch (error) {
-    console.error('Error fetching Pokémon types:', error);
-    return []; 
+    console.error("Error fetching Pokémon types:", error);
+    return [];
   }
+}
+
+export function getPokemonKey(condition?: "name" | "types"): string {
+  return condition === "name" ? "pokemon.name" : "pokemon.types[0]";
 }

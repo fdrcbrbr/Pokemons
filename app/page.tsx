@@ -1,4 +1,3 @@
-
 import NavMain from "@/components/nav-main";
 import Search from "@/components/search";
 import CardFeatured from "@/components/card-featured";
@@ -11,7 +10,7 @@ export default async function Home({
 }: {
   searchParams: Promise<{ [key: string]: string | undefined }>;
 }) {
-  const { query, random  } = await searchParams;
+  const { query, random } = await searchParams;
 
   return (
     <div>
@@ -22,7 +21,7 @@ export default async function Home({
         <HeroMain random={random} />
         <Search />
         {query ? (
-          <CardSearched query={query} />
+          <CardSearched query={query} keyType="name" />
         ) : (
           <CardFeatured />
         )}
