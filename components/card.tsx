@@ -7,7 +7,7 @@ interface PokemonCardProps {
     pokemon: Pokemon;
 }
 
-// TODO: onclick on card will route to individual pokemon page
+
 
 export default function PokemonCard({ pokemon }: PokemonCardProps) {
     return (

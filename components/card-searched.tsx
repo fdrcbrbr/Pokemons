@@ -12,16 +12,15 @@ export default async function CardSearched({
   query,
   keyType,
 }: CardSearchedProps) {
-  // Ottieni la lista completa dei Pokémon (con tutti i dati, inclusi i tipi)
+ 
   const pokemonListShort: PokemonShort[] = await getPokemonShort();
   const allPokemons = await getAllPokemonData(pokemonListShort);
 
-  // Filtra allPokemons in base a keyType
   const filteredPokemons = allPokemons.filter((pokemon) => {
     if (keyType === "name" && query) {
-      return pokemon.name.toLowerCase().includes(query.toLowerCase()); // Filtra per nome
+      return pokemon.name.toLowerCase().includes(query.toLowerCase());
     } else if (keyType === "types" && query) {
-      return pokemon.types[0].type.name.toLowerCase() === query.toLowerCase(); // Filtra per primo tipo
+      return pokemon.types[0].type.name.toLowerCase() === query.toLowerCase(); 
     }
     return false;
   });

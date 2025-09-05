@@ -6,7 +6,7 @@ import { useState } from "react";
 
 
 export default function SearchWButton() {
-  //here we use useState to control the passing of values from the input to the search when clicking a button
+
   const [query, setQuery] = useState("");
   const searchParams = useSearchParams();
   const pathname = usePathname();
