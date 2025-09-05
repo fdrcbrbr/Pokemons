@@ -10,12 +10,12 @@ export default function TypeButton() {
   const searchParams = useSearchParams();
   const pathname = usePathname();
   const router = useRouter();
-   const [typesList, setTypesList] = useState<PokemonTypeList[]>([]);
+  const [typesList, setTypesList] = useState<PokemonTypeList[]>([]);
 
     useEffect(() => {
     const fetchTypes = async () => {
-      const types = await getPokemonTypes(); // Aspetta la Promise
-      setTypesList(types); // Aggiorna lo stato con i dati
+      const types = await getPokemonTypes();
+      setTypesList(types);
     };
     fetchTypes();
   }, []);
@@ -27,7 +27,7 @@ export default function TypeButton() {
   };
 
   return (
-    <div className="flex flex-row gap-2 justify-center flex-wrap overflow-hidden">
+    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 justify-center">
       {typesList.map((t) => (
         <button
           key={t.type.name}

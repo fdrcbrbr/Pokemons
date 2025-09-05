@@ -4,7 +4,7 @@ import { TypeBadgeProps } from "@/lib/data/intefaces";
 import { PokemonTypeList } from "@/lib/data/intefaces";
 
 export async function getPokemonShort(): Promise<PokemonShort[]> {
-  const response = await fetch(`https://pokeapi.co/api/v2/pokemon/?limit=1025`);
+  const response = await fetch(`https://pokeapi.co/api/v2/pokemon/?limit=1025`, {cache: 'force-cache'});
   const data = await response.json();
   return data.results;
 }
@@ -40,7 +40,7 @@ export async function getAllPokemonData(
 
 export async function getPokemonTypes(): Promise<PokemonTypeList[]> {
   try {
-    const response = await fetch("https://pokeapi.co/api/v2/type/");
+    const response = await fetch("https://pokeapi.co/api/v2/type/", {cache: 'force-cache'});
     if (!response.ok) {
       throw new Error("Failed to fetch Pokémon types");
     }

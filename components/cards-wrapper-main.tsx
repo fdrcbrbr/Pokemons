@@ -13,11 +13,10 @@ export default function CardWrapper({
         {message}
       </h2>
       <div className="flex justify-center">
-        <section className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 justify-center gap-4">
+        <section>
           {children}
         </section>
       </div>
     </div>
   );
 }
-

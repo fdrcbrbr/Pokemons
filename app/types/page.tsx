@@ -2,13 +2,14 @@ import NavMain from "@/components/nav-main";
 import Footer from "@/components/footer";
 import HeroTypes from "@/components/hero-types";
 import CardSearched from "@/components/card-searched";
+import Pagination from "@/components/pagination";
 
 export default async function Types({
   searchParams,
 }: {
   searchParams: Promise<{ [key: string]: string | undefined }>;
 }) {
-  const { type } = await searchParams;
+  const { type, page } = await searchParams;
 
   return (
     <div>
@@ -17,7 +18,12 @@ export default async function Types({
       </header>
       <main>
         <HeroTypes />
-        <CardSearched query={type} keyType="types" />
+          <CardSearched 
+          query={type} 
+          keyType="types" 
+          page={page ? parseInt(page) : 1}
+          limit={20}
+          />
       </main>
       <Footer />
     </div>

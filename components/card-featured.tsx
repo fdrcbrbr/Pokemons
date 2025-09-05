@@ -17,14 +17,14 @@ export default async function CardFeatured({ id }: CardFeaturedProps) {
     pokemons = [pokemon];
   } else {
 
-    const featuredPokeIds: string[] = ["25", "6", "9", "3"];
+    const featuredPokeIds: string[] = ["25", "6", "9", "3", "2"];
     pokemons = await Promise.all(
       featuredPokeIds.map((id) => getPokemonById(id))
     );
   }
 
   return (
-    <CardWrapper message={id ? "Featured Pokemon" : "Popular Pokemon"}>
+    <CardWrapper message={id ? "You catched" : "Featured Pokemon"}>
       {pokemons.map((pokemon) => (
         <PokemonCard key={pokemon.name} pokemon={pokemon} />
       ))}
