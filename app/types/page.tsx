@@ -2,7 +2,7 @@ import NavMain from "@/components/nav-main";
 import Footer from "@/components/footer";
 import HeroTypes from "@/components/hero-types";
 import CardSearched from "@/components/card-searched";
-import Pagination from "@/components/pagination";
+
 
 export default async function Types({
   searchParams,
