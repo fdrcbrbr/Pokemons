@@ -100,6 +100,10 @@ h1, h2, h3 {
   @apply border-indigo-200;
 }
 
+.cborder-unknown {
+  @apply border-white;
+}
+
 .cborder-psychic {
   @apply border-pink-300;
 }
@@ -130,6 +134,10 @@ h1, h2, h3 {
 
 .cborder-fairy {
   @apply border-pink-100;
+}
+
+.cborder-stellar {
+  @apply bg-teal-600;
 }
 
 .badge-normal {
@@ -202,6 +210,10 @@ h1, h2, h3 {
 
 .badge-fairy {
   @apply bg-pink-400;
+}
+
+.badge-stellar {
+  @apply bg-teal-600;
 }
 
 /* breakout */

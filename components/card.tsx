@@ -2,6 +2,7 @@ import React from 'react';
 import TypeBadge from '@/components/type-badge';
 import Image from 'next/image';
 import {Pokemon} from '@/lib/data/intefaces';
+import { capitalize } from '@/lib/util';
 
 interface PokemonCardProps {
     pokemon: Pokemon;
@@ -21,7 +22,7 @@ export default function PokemonCard({ pokemon }: PokemonCardProps) {
                               height={200}
                             />
             </div>
-            <h2 className="text-2xl font-bold text-center pb-1">{pokemon.name}</h2>
+            <h2 className="text-2xl font-bold text-center pb-1">{capitalize(pokemon.name)}</h2>
             <div className="flex flex-row gap-1 justify-center">
                 {pokemon.types.map((t) => <TypeBadge key={t.type.name} name={t.type.name} url={t.type.url} />)}
             </div>

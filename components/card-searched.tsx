@@ -42,7 +42,7 @@ export default async function CardSearched({
   );
 
   return (
-    <CardWrapper message="Your search...">
+    <CardWrapper>
       {paginatedPokemons.map((pokemon) => (
         <PokemonCard key={pokemon.name} pokemon={pokemon} />
       ))}
