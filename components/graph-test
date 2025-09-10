@@ -1,0 +1,10 @@
+import { fetchPokemonList, Pokemon } from "@/lib/data/pokemon-graph";
+
+export default async function CardSingle() {
+  const pokemon: Pokemon[] = await fetchPokemonList();
+  
+  return pokemon;
+}
+
+const pokemons = fetchPokemonList();
+console.dir(pokemons[0]);

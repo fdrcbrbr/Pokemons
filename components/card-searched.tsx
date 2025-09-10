@@ -1,4 +1,4 @@
-import { getAllPokemonData, getPokemonShort } from "@/lib/data/pokemon";
+import { getAllPokemonData, getPokemonShort } from "@/lib/data/pokemon-rest";
 import CardWrapper from "@/components/cards-wrapper-types";
 import { PokemonShort } from "@/lib/data/intefaces";
 import PokemonCard from "./card";
@@ -8,7 +8,6 @@ interface CardSearchedProps {
   query?: string;
   keyType?: "name" | "types";
 }
-
 
 interface CardSearchedProps {
   query?: string;

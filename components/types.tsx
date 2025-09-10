@@ -1,9 +1,9 @@
 "use client";
 
-import { PokemonTypeList } from '@/lib/data/intefaces';
-import { getPokemonTypes } from "@/lib/data/pokemon";
+import { PokemonTypeList } from "@/lib/data/intefaces";
+import { getPokemonTypes } from "@/lib/data/pokemon-rest";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import {TypeBadgeXL} from './type-badge';
+import { TypeBadgeXL } from "./type-badge";
 import { useEffect, useState } from "react";
 
 export default function TypeButton() {
@@ -12,7 +12,7 @@ export default function TypeButton() {
   const router = useRouter();
   const [typesList, setTypesList] = useState<PokemonTypeList[]>([]);
 
-    useEffect(() => {
+  useEffect(() => {
     const fetchTypes = async () => {
       const types = await getPokemonTypes();
       setTypesList(types);
@@ -22,7 +22,7 @@ export default function TypeButton() {
 
   const handleClick = (typeName: string) => {
     const params = new URLSearchParams(searchParams.toString());
-    params.set('type', typeName);
+    params.set("type", typeName);
     router.push(`${pathname}?${params.toString()}`, { scroll: false });
   };
 

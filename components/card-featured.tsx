@@ -1,4 +1,4 @@
-import { getPokemonById } from "@/lib/data/pokemon";
+import { getPokemonById } from "@/lib/data/pokemon-rest";
 import CardWrapper from "@/components/cards-wrapper-types";
 import { Pokemon } from "@/lib/data/intefaces";
 import PokemonCard from "./card";
