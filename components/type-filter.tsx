@@ -1,4 +1,3 @@
-"use client";
 
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -8,7 +7,7 @@ import PokemonCard from "./card";
 import Pagination from "./pagination";
 import { PokemonShort, Pokemon } from "@/lib/data/intefaces";
 
-export default function CardFilter() {
+export default function TypeFilter() {
   const searchParams = useSearchParams();
   const [paginatedPokemons, setPaginatedPokemons] = useState<Pokemon[]>([]);
   const [totalItems, setTotalItems] = useState(0);
@@ -24,7 +23,7 @@ export default function CardFilter() {
     async function fetchData() {
       setIsLoading(true);
 
-      const query = searchParams.get("query");
+      const type = searchParams.get("type");
       const currentPage = searchParams.get("page")
         ? parseInt(searchParams.get("page")!)
         : 1;
@@ -36,9 +35,9 @@ export default function CardFilter() {
       const allPokemons = await getAllPokemonData(pokemonListShort);
 
       const filteredPokemons = allPokemons.filter((pokemon) => {
-        if (query) {
-          return pokemon.name.toLowerCase().includes(query.toLowerCase());
-        }
+        if (type === "types") {
+      return pokemon.types[0].type.name.toLowerCase();
+    }
         return false;
       });
 
@@ -61,7 +60,7 @@ export default function CardFilter() {
   if (isLoading) return <div>Loading...</div>;
 
   return (
-    <CardWrapper message="Your result:">
+    <CardWrapper message="Your search:">
       {paginatedPokemons.map((pokemon) => (
         <PokemonCard key={pokemon.name} pokemon={pokemon} />
       ))}

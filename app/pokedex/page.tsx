@@ -1,6 +1,6 @@
 import NavMain from "@/components/nav-main";
 import CardFeatured from "@/components/card-featured";
-import HeroMain from "@/components/hero-main";
+import HeroPokedex from "@/components/hero-main";
 import Footer from "@/components/footer";
 
 
@@ -9,6 +9,7 @@ export default async function Home({
 }: {
   searchParams: Promise<{ [key: string]: string | undefined }>;
 }) {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { random } = await searchParams;
 
   return (
@@ -17,7 +18,7 @@ export default async function Home({
         <NavMain />
       </header>
       <main>
-        <HeroMain random={random} />
+        <HeroPokedex/>
         <CardFeatured />
       </main>
       <Footer />

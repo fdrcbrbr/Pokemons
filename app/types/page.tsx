@@ -1,16 +1,14 @@
 import NavMain from "@/components/nav-main";
 import Footer from "@/components/footer";
 import HeroTypes from "@/components/hero-types";
-import CardSearched from "@/components/card-filter";
-import Pagination from "@/components/pagination";
+import TypeFilter from "@/components/card-search";
 
 export default async function Types({
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   searchParams,
 }: {
   searchParams: Promise<{ [key: string]: string | undefined }>;
 }) {
-  const { type, page } = await searchParams;
-
   return (
     <div>
       <header>
@@ -18,12 +16,7 @@ export default async function Types({
       </header>
       <main>
         <HeroTypes />
-        <CardSearched
-          query={type}
-          keyType="types"
-          page={page ? parseInt(page) : 1}
-          limit={10}
-        />
+        <TypeFilter />
       </main>
       <Footer />
     </div>
