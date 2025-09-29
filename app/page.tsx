@@ -3,7 +3,7 @@ import Search from "@/components/search";
 import CardFeatured from "@/components/card-featured";
 import HeroMain from "@/components/hero-main";
 import Footer from "@/components/footer";
-import CardSearched from "@/components/card-searched";
+import CardFilter from "@/components/card-filter";
 
 export default async function Home({
   searchParams,
@@ -21,7 +21,7 @@ export default async function Home({
         <HeroMain random={random} />
         <Search />
         {query ? (
-          <CardSearched query={query} keyType="name" />
+          <CardFilter/>
         ) : (
           <CardFeatured />
         )}

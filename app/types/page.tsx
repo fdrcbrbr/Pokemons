@@ -1,7 +1,7 @@
 import NavMain from "@/components/nav-main";
 import Footer from "@/components/footer";
 import HeroTypes from "@/components/hero-types";
-import CardSearched from "@/components/card-searched";
+import CardSearched from "@/components/card-filter";
 import Pagination from "@/components/pagination";
 
 export default async function Types({
@@ -18,12 +18,12 @@ export default async function Types({
       </header>
       <main>
         <HeroTypes />
-          <CardSearched 
-          query={type} 
-          keyType="types" 
+        <CardSearched
+          query={type}
+          keyType="types"
           page={page ? parseInt(page) : 1}
           limit={10}
-          />
+        />
       </main>
       <Footer />
     </div>
