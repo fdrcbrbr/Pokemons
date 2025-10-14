@@ -4,12 +4,7 @@ import { PokemonShort } from "@/lib/data/intefaces";
 import PokemonCard from "./card";
 import Pagination from "./pagination";
 
-
-
-
 //Discarded due to slow logic when filtering name against type
-
-
 
 
 interface CardSearchedProps {
