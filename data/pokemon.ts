@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { Pokemon, PokemonShort } from "@/lib/data/intefaces";
-import { TypeBadgeProps } from "@/lib/data/intefaces";
-import { PokemonTypeList } from "@/lib/data/intefaces";
+import { Pokemon, PokemonShort } from "@/data/intefaces";
+import { TypeBadgeProps } from "@/data/intefaces";
+import { PokemonTypeList } from "@/data/intefaces";
 
 export async function getPokemonShort(): Promise<PokemonShort[]> {
   const response = await fetch(`https://pokeapi.co/api/v2/pokemon/?limit=1025`, {cache: 'force-cache'});

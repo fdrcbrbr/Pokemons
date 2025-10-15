@@ -1,7 +1,7 @@
 "use client";
 
-import { PokemonTypeList } from '@/lib/data/intefaces';
-import { getPokemonTypes } from "@/lib/data/pokemon";
+import { PokemonTypeList } from '@/data/intefaces';
+import { getPokemonTypes } from "@/data/pokemon";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import {TypeBadgeXL} from './type-badge';
 import { useEffect, useState } from "react";

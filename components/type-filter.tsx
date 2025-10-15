@@ -1,11 +1,11 @@
 
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
-import { getAllPokemonData, getPokemonShort } from "@/lib/data/pokemon";
+import { getAllPokemonData, getPokemonShort } from "@/data/pokemon";
 import CardWrapper from "@/components/cards-wrapper";
 import PokemonCard from "./card";
 import Pagination from "./pagination";
-import { PokemonShort, Pokemon } from "@/lib/data/intefaces";
+import { PokemonShort, Pokemon } from "@/data/intefaces";
 
 export default function TypeFilter() {
   const searchParams = useSearchParams();

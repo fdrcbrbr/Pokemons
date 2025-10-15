@@ -1,5 +1,5 @@
 import React from 'react'
-import { TypeBadgeProps } from '@/lib/data/intefaces';
+import { TypeBadgeProps } from '@/data/intefaces';
 
 
 export default function TypeBadge({ name }: TypeBadgeProps) {
