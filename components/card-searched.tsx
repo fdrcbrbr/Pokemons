@@ -1,6 +1,6 @@
-import { getAllPokemonData, getPokemonShort } from "@/lib/data/pokemon";
+import { getAllPokemonData, getPokemonShort } from "@/data/pokemon";
 import CardWrapper from "@/components/cards-wrapper";
-import { PokemonShort } from "@/lib/data/intefaces";
+import { PokemonShort } from "@/data/intefaces";
 import PokemonCard from "./card";
 import Pagination from "./pagination";
 
