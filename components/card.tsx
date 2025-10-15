@@ -1,7 +1,7 @@
 import React from 'react';
 import TypeBadge from '@/components/type-badge';
 import Image from 'next/image';
-import {Pokemon} from '@/lib/data/intefaces';
+import {Pokemon} from '@/data/intefaces';
 
 interface PokemonCardProps {
     pokemon: Pokemon;

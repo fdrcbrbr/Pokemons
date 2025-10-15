@@ -1,5 +1,5 @@
-import { getPokemonById } from "@/lib/data/pokemon";
-import {Pokemon} from "@/lib/data/intefaces";
+import { getPokemonById } from "@/data/pokemon";
+import {Pokemon} from "@/data/intefaces";
 import PokemonCard from "@/components/card";
 
 

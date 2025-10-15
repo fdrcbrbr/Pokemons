@@ -1,6 +1,6 @@
-import { getPokemonById } from "@/lib/data/pokemon";
+import { getPokemonById } from "@/data/pokemon";
 import CardWrapper from "@/components/cards-wrapper";
-import { Pokemon } from "@/lib/data/intefaces";
+import { Pokemon } from "@/data/intefaces";
 import PokemonCard from "./card";
 
 
